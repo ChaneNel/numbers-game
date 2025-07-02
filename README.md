@@ -10,9 +10,9 @@ This is an interactive brain game inspired by the Numbers Round from *8 Out of 1
 - Each number can only be used **once**.
 - After trying it yourself, click **“Reveal Solution”** to see what the AI came up with!
 
-## 🌐 Try the Live Version
+## Try the Live Version
 
-[👉 Click here to play online](https://numbers-game-es7itysmz8jasbasppog5a.streamlit.app/)
+[ Click here to play online](https://numbers-game-es7itysmz8jasbasppog5a.streamlit.app/)
 
 ## Technologies Used
 
