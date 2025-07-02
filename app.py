@@ -18,7 +18,7 @@ SMALL_NUMS = list(range(1, 11)) * 2
 OPERATORS = [('+', operator.add), ('-', operator.sub), ('*', operator.mul), ('/', operator.truediv)]
 
 st.set_page_config(page_title="Countdown Numbers Game", layout="centered")
-st.title("🔢 Countdown Numbers Game")
+st.title("Countdown Numbers Game")
 st.markdown("**Can you reach the target using these numbers?**")
 
 # === Generate Game ===
@@ -33,9 +33,9 @@ if 'numbers' not in st.session_state:
     st.session_state.numbers, st.session_state.target = generate_game()
 
 # Display puzzle
-st.subheader(f"🎯 Target: {st.session_state.target}")
-st.write(f"🔢 Numbers: `{st.session_state.numbers}`")
-st.write("🧠 Use + – × ÷ to combine the numbers and hit the target!")
+st.subheader(f"Target: {st.session_state.target}")
+st.write(f"Numbers: `{st.session_state.numbers}`")
+st.write("Use + – × ÷ to combine the numbers and hit the target!")
 
 # === Solver ===
 def try_all_combinations(numbers, target):
@@ -76,15 +76,15 @@ def try_all_combinations(numbers, target):
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("🎲 New Puzzle"):
+    if st.button("New Puzzle"):
         st.session_state.numbers, st.session_state.target = generate_game()
         st.rerun()
 
 with col2:
-    if st.button("💡 Reveal Solution"):
+    if st.button("Reveal Solution"):
         with st.spinner("Thinking hard..."):
             solution, expression = try_all_combinations(st.session_state.numbers, st.session_state.target)
             if solution == st.session_state.target:
-                st.success(f"🎯 Perfect! `{expression}` = {solution}")
+                st.success(f"Perfect! `{expression}` = {solution}")
             else:
-                st.warning(f"📉 Closest: `{solution}`\n\n🧠 `{expression}`\n🎯 Off by {abs(solution - st.session_state.target)}")
+                st.warning(f"Closest: `{solution}`\n\n`{expression}`\n Off by {abs(solution - st.session_state.target)}")
